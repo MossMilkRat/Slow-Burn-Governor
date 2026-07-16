@@ -1,0 +1,52 @@
+name: validate
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate manifest.json
+        run: |
+          node -e "
+          const fs = require('fs');
+          const m = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
+          const required = ['display_name', 'loading_order', 'js', 'author', 'version'];
+          const missing = required.filter(k => m[k] === undefined);
+          if (missing.length) { console.error('manifest missing:', missing.join(', ')); process.exit(1); }
+          for (const f of [m.js, m.css].filter(Boolean)) {
+            if (!fs.existsSync(f)) { console.error('manifest references missing file:', f); process.exit(1); }
+          }
+          console.log('manifest ok — v' + m.version);
+          "
+
+      - name: Check index.js parses as an ES module
+        run: node --check index.js
+
+      - name: Validate ladder integrity
+        run: |
+          node -e "
+          const fs = require('fs');
+          const src = fs.readFileSync('index.js', 'utf8');
+          const m = src.match(/const LADDER = (\[[\s\S]*?\n\];)/);
+          if (!m) { console.error('could not locate LADDER'); process.exit(1); }
+          const LADDER = eval(m[1].replace(/;\$/, ''));
+          const fields = ['n','name','state','surface','proximity','unlocks','blocks','gate'];
+          LADDER.forEach((r, i) => {
+            if (r.n !== i) { console.error('rung index mismatch at ' + i); process.exit(1); }
+            for (const f of fields) {
+              if (r[f] === undefined || r[f] === '') { console.error('rung ' + i + ' missing ' + f); process.exit(1); }
+            }
+            if (!Array.isArray(r.blocks) || !r.blocks.length) { console.error('rung ' + i + ' has no blocks'); process.exit(1); }
+          });
+          console.log('ladder ok — ' + LADDER.length + ' rungs, all well-formed');
+          "

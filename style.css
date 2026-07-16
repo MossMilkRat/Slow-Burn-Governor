@@ -1,0 +1,141 @@
+.sbg-settings .sbg-track {
+    border: 1px solid var(--SmartThemeBorderColor);
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    background: var(--black30a);
+}
+
+.sbg-track-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.sbg-name {
+    font-weight: 700;
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 1px dotted var(--SmartThemeBorderColor);
+    padding: 2px 0;
+}
+
+.sbg-rung-num {
+    font-family: var(--monoFontFamily, monospace);
+    opacity: 0.7;
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+
+.sbg-rung-name {
+    font-size: 1.05em;
+    font-weight: 600;
+    margin-top: 4px;
+    color: var(--SmartThemeQuoteColor);
+}
+
+.sbg-state {
+    font-size: 0.85em;
+    opacity: 0.75;
+    font-style: italic;
+    margin: 2px 0 6px;
+    line-height: 1.35;
+}
+
+.sbg-slider {
+    width: 100%;
+    margin: 4px 0;
+}
+
+.sbg-meter {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--black50a);
+    overflow: hidden;
+}
+
+.sbg-meter-fill {
+    height: 100%;
+    background: var(--SmartThemeBorderColor);
+    transition: width 0.2s ease;
+}
+
+.sbg-meter-fill.sbg-ready {
+    background: var(--SmartThemeQuoteColor);
+}
+
+.sbg-count {
+    font-size: 0.75em;
+    opacity: 0.6;
+    margin-top: 3px;
+}
+
+.sbg-count.sbg-ready-text {
+    opacity: 0.9;
+    color: var(--SmartThemeQuoteColor);
+}
+
+.sbg-gate {
+    font-size: 0.78em;
+    opacity: 0.7;
+    margin-top: 5px;
+    line-height: 1.35;
+}
+
+.sbg-mirror {
+    margin-top: 6px;
+    font-size: 0.82em;
+}
+
+.sbg-btns {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.sbg-btns .menu_button {
+    flex: 1;
+    margin: 0;
+}
+
+.sbg-desync {
+    font-size: 0.82em;
+    line-height: 1.4;
+    padding: 8px 10px;
+    border-left: 3px solid var(--SmartThemeQuoteColor);
+    background: var(--black30a);
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.sbg-settings label {
+    display: block;
+    font-size: 0.82em;
+    opacity: 0.8;
+    margin: 8px 0 2px;
+}
+
+.sbg-pre {
+    white-space: pre-wrap;
+    font-family: var(--monoFontFamily, monospace);
+    font-size: 0.8em;
+    text-align: left;
+    line-height: 1.45;
+}
+
+.sbg-surface,
+.sbg-prox {
+    font-size: 0.78em;
+    opacity: 0.72;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.sbg-register {
+    width: 100%;
+    font-size: 0.78em;
+    line-height: 1.4;
+    resize: vertical;
+}

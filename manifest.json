@@ -1,0 +1,12 @@
+{
+  "display_name": "Slow Burn Governor — Dual Track",
+  "loading_order": 12,
+  "requires": [],
+  "optional": [],
+  "js": "index.js",
+  "css": "style.css",
+  "author": "BLITZEN_GH",
+  "version": "2.1.0",
+  "homePage": "https://github.com/BLITZEN_GH/slowburn-governor",
+  "auto_update": true
+}
