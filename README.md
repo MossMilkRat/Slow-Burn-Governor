@@ -79,9 +79,9 @@ The **ceiling** is the blunt instrument: set it to 7 and nothing above rung 7 ex
 
 Per-character, editable, injected every turn. It's what keeps two people at the same rung from sounding identical:
 
-> **Zyren** — Courtesy. His hostility wears perfect manners. When he is losing, he becomes MORE formal, not less. His cruelty is always deniable.
+> **Character 1** — Courtesy. His hostility wears perfect manners. When he is losing, he becomes MORE formal, not less. His cruelty is always deniable.
 >
-> **Astrid** — Chaos. Her hostility wears provocation, aimed at whatever he values most. When she is losing, she escalates the disorder. Her cruelty is never deniable and she does not want it to be.
+> **Character 2** — Chaos. Her hostility wears provocation, aimed at whatever he values most. When she is losing, she escalates the disorder. Her cruelty is never deniable and she does not want it to be.
 
 Same rung, opposite weapons.
 
@@ -122,9 +122,9 @@ Rung 14 is the payoff of rung 2, which is why the early bickering has to be genu
 | Command | Effect |
 |---|---|
 | `/rung` | Report both positions |
-| `/rung Astrid 7` | Set Astrid to rung 7 |
+| `/rung Mary 7` | Set Mary to rung 7 |
 | `/ceiling 11` | Hard ceiling at rung 11 |
-| `/mirror Zyren broken` | Break Zyren's misapprehension |
+| `/mirror John broken` | Break John's misapprehension |
 | `/mirror` | Report both mirror states |
 
 ## Settings
